@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'app_smart',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -138,3 +140,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ALL_ORIGINS=True
+
+CORS_ALLOWED-ORIGINS = [
+    'http://localhost:5173',
+]
