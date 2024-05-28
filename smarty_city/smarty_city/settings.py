@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gqiqy3my&#46xctx2o6(ev!3woxaqs6uzez!dko!!@(c+n7&m3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost','10.0.2.2']
 
 
 # Application definition
@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'app_smart',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -66,6 +65,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+
 ]
 
 ROOT_URLCONF = 'smarty_city.urls'
@@ -134,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'  
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -143,6 +152,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ALL_ORIGINS=True
 
-CORS_ALLOWED-ORIGINS = [
-    'http://localhost:5173',
+CORS_ALLOWED_ORIGINS = [
+    
+    'http://localhost:3000',  # Exemplo de origem permitida
+    'http://127.0.0.1:3000',   # Outra origem permitida
+    'exp://10.109.71.21:8082', # Origem permitida para Expo
 ]
