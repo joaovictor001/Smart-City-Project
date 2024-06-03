@@ -154,7 +154,7 @@ CORS_ALLOWED_ALL_ORIGINS=True
 
 CORS_ALLOWED_ORIGINS = [
     
-    'http://localhost:3000',  # Exemplo de origem permitida
+    'http://localhost:5173',  # Exemplo de origem permitida
     'http://127.0.0.1:3000',   # Outra origem permitida
     'exp://10.109.71.21:8082', # Origem permitida para Expo
 ]
